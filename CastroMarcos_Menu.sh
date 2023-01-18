@@ -13,8 +13,9 @@ function f.menu(){
         echo ""
 
         echo "1. Identificar archivos del HOME del usuario."
-        echo "2. Suma"
-        echo "3. Resta"
+        echo "2. Realizar una suma"
+        echo "3. Realizar una resta"
+        echo "4. Identificar el procesador del equipo."
 }
 function f.identificar(){
     echo ""
@@ -55,6 +56,9 @@ function f.resta(){
                 resultado=$(($x - $y))
                 echo "El resultado es: " $resultado
 }
+function f.procesador(){
+    grep -w Modelo lscpu
+}
 until ((sair==0))
     do
 #Limpar a pantalla antes de facer nada.
@@ -73,6 +77,9 @@ until ((sair==0))
                 ;;
             3)
                 f.resta
+                ;;
+            4)
+                f.procesador
                 ;;
             *)
                 clear
