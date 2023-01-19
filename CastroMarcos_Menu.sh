@@ -111,9 +111,10 @@ function f.notas(){
             read -p "Nombre de la nota (sin extensión): " nota
             if [ -e Notas ]
                 then
-                    echo
+                    echo ""
                 else
                     mkdir Notas
+                    echo ""
             fi
             if [ -e Notas/$nota.txt ]
                 then
