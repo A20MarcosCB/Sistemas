@@ -17,6 +17,7 @@ function f.menu(){
         echo "3. Realizar una resta"
         echo "4. Identificar el procesador del equipo."
         echo "5. Crear notas."
+        echo ""
 }
 function f.identificar(){
     clear
@@ -108,7 +109,7 @@ function f.notas(){
             echo ""
             echo "CREAR NOTAS"
             echo ""
-            read -p "Nombre de la nota (sin extensión): " nota
+            
             if [ -e Notas ]
                 then
                     echo ""
@@ -116,6 +117,13 @@ function f.notas(){
                     mkdir Notas
                     echo ""
             fi
+            echo "Tienes las siguientes notas: "
+            echo ""
+            ls Notas
+            echo ""
+            read -p "Nombre de la nota (sin extensión): " nota
+            echo ""
+            
             if [ -e Notas/$nota.txt ]
                 then
                     echo "Nombre ya existente."
@@ -126,6 +134,8 @@ function f.notas(){
                     echo $contenido > Notas/$nota.txt
                     echo ""
             fi
+            
+            
 }
 until ((sair==0))
     do
