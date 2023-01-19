@@ -108,7 +108,6 @@ function f.notas(){
             echo ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░
             echo ""
             echo "CREAR NOTAS"
-            echo ""
             
             if [ -e Notas ]
                 then
@@ -117,10 +116,19 @@ function f.notas(){
                     mkdir Notas
                     echo ""
             fi
-            echo "Tienes las siguientes notas: "
-            echo ""
-            ls Notas
-            echo ""
+            
+            if [ "$(ls Notas)" ]
+                then
+                    echo "Tienes las siguientes notas: "
+                    echo ""
+                    ls Notas
+                    echo ""
+                else
+                    echo "* Actualmente la carpeta Notas está vacía. *"
+                    echo ""
+
+            fi
+
             read -p "Nombre de la nota (sin extensión): " nota
             echo ""
             
