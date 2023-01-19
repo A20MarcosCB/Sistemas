@@ -95,7 +95,7 @@ function f.procesador(){
     echo ""
     echo "IDENTIFICAR EL PROCESADOR DEL EQUIPO"
     echo ""
-    grep -w Modelo lscpu
+    lscpu | grep -w -i "Nombre del modelo"
 }
 function f.notas(){
             clear
@@ -195,3 +195,4 @@ until ((sair==0))
     echo ██║░░╚██╗██╔══██╗██╔══██║██║░░██╗██║██╔══██║░╚═══██╗
     echo ╚██████╔╝██║░░██║██║░░██║╚█████╔╝██║██║░░██║██████╔╝
     echo ░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝╚═╝░░╚═╝╚═════╝
+    echo ""
